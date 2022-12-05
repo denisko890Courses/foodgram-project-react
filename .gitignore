@@ -50,7 +50,7 @@ coverage.xml
 *.py,cover
 .hypothesis/
 .pytest_cache/
-
+export_for_pg.conf
 # Translations
 *.mo
 *.pot
