@@ -28,7 +28,7 @@ class Migration(migrations.Migration):
                 ('password', models.CharField(blank=True, max_length=150, verbose_name='Пароль')),
                 ('email', models.EmailField(max_length=150, unique=True, verbose_name='Адрес электронной почты (обязательно):')),
                 ('first_name', models.CharField(max_length=150, verbose_name='Имя')),
-                ('second_name', models.CharField(max_length=150, verbose_name='Фамилия')),
+                ('last_name', models.CharField(max_length=150, verbose_name='Фамилия')),
                 ('groups', models.ManyToManyField(blank=True, help_text='The groups this user belongs to. A user will get all permissions granted to each of their groups.', related_name='user_set', related_query_name='user', to='auth.Group', verbose_name='groups')),
                 ('user_permissions', models.ManyToManyField(blank=True, help_text='Specific permissions for this user.', related_name='user_set', related_query_name='user', to='auth.Permission', verbose_name='user permissions')),
             ],
