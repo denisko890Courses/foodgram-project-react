@@ -2,34 +2,30 @@
 
 from django.db import migrations
 
-
 INITIAL_TAGS = [
-    {'color': 'orange', 'name': 'Завтрак', 'slug': 'breakfast'},
-    {'color': 'green', 'name': 'Обед', 'slug': 'lunch'},
-    {'color': 'purple', 'name': 'Ужин', 'slug': 'dinner'},
+    {"color": "orange", "name": "Завтрак", "slug": "breakfast"},
+    {"color": "green", "name": "Обед", "slug": "lunch"},
+    {"color": "purple", "name": "Ужин", "slug": "dinner"},
 ]
+
 
 def add_tags(apps, schema_editor):
     Tag = apps.get_model("recipes", "Tag")
     for tag in INITIAL_TAGS:
-        new_tag = Tag(color=tag['color'], name=tag['name'], slug=tag['slug'])
+        new_tag = Tag(color=tag["color"], name=tag["name"], slug=tag["slug"])
         new_tag.save()
 
 
 def remove_tags(apps, schema_editor):
     Tag = apps.get_model("recipes", "Tag")
     for tag in INITIAL_TAGS:
-        Tag.objects.get(slug=tag['slug']).delete()
+        Tag.objects.get(slug=tag["slug"]).delete()
+
 
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('recipes', '0002_auto_20221206_1656'),
+        ("recipes", "0002_auto_20221206_1656"),
     ]
 
-    operations = [
-        migrations.RunPython(
-            add_tags,
-            remove_tags
-        )
-    ]
+    operations = [migrations.RunPython(add_tags, remove_tags)]

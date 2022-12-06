@@ -7,35 +7,26 @@ class User(AbstractUser):
     username = models.CharField(
         max_length=150,
         unique=True,
-        verbose_name='Никнейм пользователя (обязательно):'
+        verbose_name="Никнейм пользователя (обязательно):",
     )
     password = models.CharField(
-        max_length=150,
-        blank=True,
-        verbose_name='Пароль'
-    )
+        max_length=150, blank=True, verbose_name="Пароль")
     email = models.EmailField(
         max_length=150,
         unique=True,
-        verbose_name='Адрес электронной почты (обязательно):'
+        verbose_name="Адрес электронной почты (обязательно):",
     )
     first_name = models.CharField(
-        max_length=150,
-        unique=False,
-        verbose_name='Имя'
-    )
+        max_length=150, unique=False, verbose_name="Имя")
     last_name = models.CharField(
-        max_length=150,
-        unique=False,
-        verbose_name='Фамилия'
-    )
+        max_length=150, unique=False, verbose_name="Фамилия")
 
-    USERNAME_FIELD = 'email'
-    REQUIRED_FIELDS = ['username', 'first_name', 'last_name', 'password']
+    USERNAME_FIELD = "email"
+    REQUIRED_FIELDS = ["username", "first_name", "last_name", "password"]
 
     class Meta:
-        verbose_name = 'Пользователь'
-        verbose_name_plural = 'Пользователи'
+        verbose_name = "Пользователь"
+        verbose_name_plural = "Пользователи"
 
     def __str__(self):
         return self.username
