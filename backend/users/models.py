@@ -24,14 +24,14 @@ class User(AbstractUser):
         unique=False,
         verbose_name='Имя'
     )
-    second_name = models.CharField(
+    last_name = models.CharField(
         max_length=150,
         unique=False,
         verbose_name='Фамилия'
     )
 
     USERNAME_FIELD = 'email'
-    REQUIRED_FIELDS = ['username', 'first_name', 'second_name', 'password']
+    REQUIRED_FIELDS = ['username', 'first_name', 'last_name', 'password']
 
     class Meta:
         verbose_name = 'Пользователь'
