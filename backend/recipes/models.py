@@ -62,10 +62,14 @@ class RecipeIngredient(models.Model):
     recipe = models.ForeignKey(
         'Recipe',
         on_delete=models.CASCADE,
+        related_name='ingredient_list',
+        verbose_name='Рецепт'
     )
     ingredient = models.ForeignKey(
         Ingredient,
         on_delete=models.CASCADE,
+        related_name='recipe',
+        verbose_name='Ингредиент',
     )
     amount = models.PositiveSmallIntegerField(
         default=1,
@@ -105,7 +109,7 @@ class Recipe(models.Model):
     text = models.TextField(
         verbose_name='Описание'
     )
-    Ingredients = models.ManyToManyField(
+    ingredients = models.ManyToManyField(
         Ingredient,
         related_name='recipes',
         verbose_name='Ингредиенты',
@@ -126,12 +130,6 @@ class Recipe(models.Model):
 
     class Meta:
         ordering = ('-pub_date',)
-        constraints = [
-            models.UniqueConstraint(
-                fields=['author', 'name'],
-                name='unique_recipe'
-            ),
-        ]
         verbose_name = 'Рецепт'
         verbose_name_plural = 'Рецепты'
 
@@ -171,13 +169,13 @@ class Favourite(models.Model):
     user = models.ForeignKey(
         User,
         on_delete=models.CASCADE,
-        related_name="favourite_recepe",
+        related_name="favorites",
         verbose_name="Кто выбрал рецепт"
     )
     recipe = models.ForeignKey(
         Recipe,
         on_delete=models.CASCADE,
-        related_name="favourite_recepe",
+        related_name="favorites",
         verbose_name="Выбранный рецепт"
     )
 

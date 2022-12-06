@@ -10,6 +10,7 @@ from djoser.serializers import (
 )
 from rest_framework.fields import IntegerField, SerializerMethodField
 from rest_framework.relations import PrimaryKeyRelatedField
+from django.db.models import F
 
 User = get_user_model()
 
@@ -57,7 +58,7 @@ class UserSerializer(BaseUserSerializer):
         return Follow.objects.filter(user=user, author=obj).exists()
 
 
-class RecipeIngredientsSerializer(serializers.ModelSerializer):
+class RecipeIngredientSerializer(serializers.ModelSerializer):
     id = IntegerField(write_only=True)
     name = serializers.SlugRelatedField(
         slug_field='name',
@@ -90,7 +91,7 @@ class RecipeWriteUpdateSerializer(serializers.ModelSerializer):
         many=True,
         queryset=Tag.objects.all(),
     )
-    ingredients = RecipeIngredientsSerializer(
+    ingredients = RecipeIngredientSerializer(
         many=True
     )
     author = UserSerializer(read_only=True)
@@ -140,7 +141,7 @@ class RecipeWriteUpdateSerializer(serializers.ModelSerializer):
         for tag_name in tags:
             if not Tag.objects.filter(name=tag_name).exists():
                 raise serializers.ValidationError(
-                    f'Тэга {tag_name} не существует!')
+                    f'Тега {tag_name} не существует!')
         return data
 
     def create_ingredients(self, ingredients, recipe):

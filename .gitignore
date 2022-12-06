@@ -73,7 +73,6 @@ docs/_build/
 
 # PyBuilder
 target/
-
 # Jupyter Notebook
 .ipynb_checkpoints
 
@@ -124,7 +123,7 @@ venv.bak/
 .mypy_cache/
 .dmypy.json
 dmypy.json
-
+backend/media/recipes/
 # Pyre type checker
 .pyre/
 
