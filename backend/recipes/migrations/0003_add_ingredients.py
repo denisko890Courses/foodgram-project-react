@@ -31,7 +31,7 @@ def remove_ingredients(apps, schema_editor):
 class Migration(migrations.Migration):
 
     dependencies = [
-        ("recipes", "0003_add_tags"),
+        ("recipes", "0002_add_tags"),
     ]
 
     operations = [migrations.RunPython(add_ingredients, remove_ingredients)]

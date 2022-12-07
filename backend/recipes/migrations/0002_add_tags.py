@@ -25,7 +25,7 @@ def remove_tags(apps, schema_editor):
 class Migration(migrations.Migration):
 
     dependencies = [
-        ("recipes", "0002_auto_20221206_1656"),
+        ("recipes", "0001_initial"),
     ]
 
     operations = [migrations.RunPython(add_tags, remove_tags)]

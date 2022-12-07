@@ -58,10 +58,10 @@
     {"name": "аргановое масло", "measurement_unit": "г"},
     {"name": "аришта", "measurement_unit": "г"},
     {"name": "ароматизатор", "measurement_unit": "г"},
-    {"name": 'ароматизатор "ананас"', "measurement_unit": "по вкусу"},
-    {"name": 'ароматизатор "вишня"', "measurement_unit": "капля"},
-    {"name": 'ароматизатор "малина"', "measurement_unit": "капля"},
-    {"name": 'ароматизатор "ром"', "measurement_unit": "г"},
+    {"name": "ароматизатор 'ананас'", "measurement_unit": "по вкусу"},
+    {"name": "ароматизатор 'вишня'", "measurement_unit": "капля"},
+    {"name": "ароматизатор 'малина'", "measurement_unit": "капля"},
+    {"name": "ароматизатор 'ром'", "measurement_unit": "г"},
     {"name": "артишоки", "measurement_unit": "г"},
     {"name": "артишоки в масле", "measurement_unit": "г"},
     {"name": "артишоки маринованные", "measurement_unit": "г"},
@@ -1350,7 +1350,7 @@
     {"name": "помидоры консервированные в собственном соку", "measurement_unit": "г"},
     {
         "name": "помидоры консервированные в собственном соку с базиликом",
-        "measurement_unit": "г",
+        "measurement_unit": "г"
     },
     {"name": "помидоры протертые пассата", "measurement_unit": "г"},
     {"name": "помидоры соленые", "measurement_unit": "шт."},
@@ -2189,5 +2189,5 @@
     {"name": "японская крошка панко", "measurement_unit": "г"},
     {"name": "ячменные хлопья", "measurement_unit": "г"},
     {"name": "ячмень", "measurement_unit": "г"},
-    {"name": "ячневая крупа", "measurement_unit": "г"},
+    {"name": "ячневая крупа", "measurement_unit": "г"}
 ]
