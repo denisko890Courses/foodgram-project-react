@@ -86,6 +86,10 @@ CORS_ALLOWED_ORIGINS = [
     'http://localhost:8000',
 ]
 
+CORS_ORIGIN_WHITELIST = (
+    'localhost:8000',
+)
+
 CORS_URLS_REGEX = r"^/api/.*$"
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
