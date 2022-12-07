@@ -82,8 +82,10 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = "foodgram.wsgi.application"
+CORS_ALLOWED_ORIGINS = [
+    'http://localhost:8000',
+]
 
-CORS_ORIGIN_ALLOW_ALL = True
 CORS_URLS_REGEX = r"^/api/.*$"
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
