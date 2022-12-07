@@ -5,11 +5,10 @@ from django.shortcuts import get_object_or_404
 from djoser.serializers import UserCreateSerializer as BaseCreateUserSerializer
 from djoser.serializers import UserSerializer as BaseUserSerializer
 from drf_base64.fields import Base64ImageField
+from recipes.models import Follow, Ingredient, Recipe, RecipeIngredient, Tag
 from rest_framework import serializers
 from rest_framework.fields import IntegerField, SerializerMethodField
 from rest_framework.relations import PrimaryKeyRelatedField
-
-from recipes.models import Follow, Ingredient, Recipe, RecipeIngredient, Tag
 
 User = get_user_model()
 
