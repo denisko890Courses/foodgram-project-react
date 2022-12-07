@@ -114,7 +114,13 @@ class RecipeViewSet(viewsets.ModelViewSet):
             name = ingredient.ingredient.name
             amount = ingredient.amount
             measurement_unit = ingredient.ingredient.measurement_unit
-            ingredients_list[name]["amount"] += amount
+            if name not in ingredients_list:
+                ingredients_list[name] = {
+                    'amount': amount,
+                    'measurement_unit': measurement_unit
+                }
+            else:
+                ingredients_list[name]['amount'] += amount
 
         shopping_list = "\n".join(
             [
@@ -124,8 +130,6 @@ class RecipeViewSet(viewsets.ModelViewSet):
                 for ingredient in ingredients_list
             ]
         )
-
-        today = datetime.today()
 
         filename = f"your_best_ingredients.txt"
         response = HttpResponse(shopping_list, content_type="text/plain")

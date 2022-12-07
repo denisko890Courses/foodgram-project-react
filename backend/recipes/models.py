@@ -3,17 +3,6 @@ from django.db import models
 
 from users.models import User
 
-ORANGE = "#E26C2D"
-GREEN = "#49B64E"
-PURPLE = "#8775D2"
-
-
-COLORS = (
-    (ORANGE, 'Оранжевый'),
-    (GREEN, 'Зеленый'),
-    (PURPLE, 'Пурпурный'),
-)
-
 
 class Tag(models.Model):
     name = models.CharField(verbose_name="Название", max_length=200)
@@ -23,7 +12,6 @@ class Tag(models.Model):
         "Цвет в HEX",
         max_length=7,
         unique=True,
-        choices=COLORS,
     )
 
     class Meta:
