@@ -1,8 +1,8 @@
 FROM python:3.7-slim
 
-WORKDIR /backend
+WORKDIR /app
 
-COPY requirements.txt /backend
+COPY requirements.txt /app
 
 RUN apt-get update \
     && apt-get -y install libpq-dev gcc \
@@ -10,6 +10,6 @@ RUN apt-get update \
 
 RUN pip3 install -r /app/requirements.txt --no-cache-dir
 
-COPY ./ /backend
+COPY ./ /app
 
 CMD gunicorn foodgram.wsgi:application --bind 0.0.0.0:8000
