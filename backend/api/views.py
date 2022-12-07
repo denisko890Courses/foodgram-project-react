@@ -1,5 +1,3 @@
-from datetime import datetime
-
 from django.contrib.auth import get_user_model
 from django.http import HttpResponse
 from django.shortcuts import get_object_or_404
@@ -118,7 +116,7 @@ class RecipeViewSet(viewsets.ModelViewSet):
             ]
         )
 
-        filename = f"your_best_ingredients.txt"
+        filename = "your_best_ingredients.txt"
         response = HttpResponse(shopping_list, content_type="text/plain")
         response["Content-Disposition"] = f"attachment; filename={filename}"
 
