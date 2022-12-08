@@ -6,7 +6,7 @@ You are Welcome!
 [![Foodgram workflow](https://github.com/denisko890Courses/foodgram-project-react/actions/workflows/foodgram_workflows.yaml/badge.svg)](https://github.com/denisko890Courses/foodgram-project-react/actions/workflows/foodgram_workflows.yaml)
 
 ## Пример проекта доступен по
-http://84.201.161.136/
+http://130.193.53.248/
 login: test@test.ru
 pass: Pass55word!
 
